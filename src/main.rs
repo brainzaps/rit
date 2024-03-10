@@ -1,7 +1,13 @@
-use clap::{command, Arg};
+use clap::{command, Arg, ArgGroup};
 
 fn main() {
     let match_result = command!()
+        .about("A basic example")
+        .group(
+            ArgGroup::new("person-register")
+                .arg("firstname")
+                .arg("lastname"),
+        )
         .arg(
             Arg::new("firstname")
                 .short('f')
@@ -18,6 +24,13 @@ fn main() {
                 .help("The person's last name"),
         )
         .arg(Arg::new("fluffy").long("fluffy"))
+        .group(ArgGroup::new("pet-register").arg("pet-name"))
+        .arg(
+            Arg::new("pet-name")
+                .long("pet-name")
+                .short('n')
+                .required(true),
+        )
         .get_matches();
 
     print!("{:?}", match_result);
