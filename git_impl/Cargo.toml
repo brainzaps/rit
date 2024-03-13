@@ -5,6 +5,10 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "rit"
+path = "src/lib.rs"
+
 [dependencies]
 camino = "1.1.6"
 clap = { version = "4.4.2", features = ["derive", "cargo"] }
