@@ -6,3 +6,6 @@ helpc:
 
 ipath:
 	cargo run --manifest-path git_impl/Cargo.toml -- init --path $(REPO)
+
+init:
+	cargo run --manifest-path git_impl/Cargo.toml -- init
